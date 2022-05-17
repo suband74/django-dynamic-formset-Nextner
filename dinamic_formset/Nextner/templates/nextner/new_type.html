@@ -1,0 +1,17 @@
+{% extends "nextner/base.html" %}
+
+{% load bootstrap4 %}
+{% block title %}Добавление типа товара{% endblock %}
+{% block content %}
+  {% block one %}
+    <h2>Добавление типа товара</h2>
+  {% endblock one %}
+
+<form method="post">
+  {% csrf_token %}
+  
+  {% bootstrap_form type_form layout='horizontal' %}
+  {% buttons submit='Добавить' %}{% endbuttons %}
+</form>
+
+{% endblock %}

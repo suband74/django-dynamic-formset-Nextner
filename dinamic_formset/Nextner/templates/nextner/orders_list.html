@@ -1,0 +1,28 @@
+{% extends "nextner/base.html" %}
+{% block title %}Список заказов{% endblock %}
+{% block header %}{% endblock %}
+{% block content %}
+  <div class="container">
+    <h1>Список заказов</h1>
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th scope="col">Товар</th>
+        <th scope="col">Тип</th>
+        <th scope="col">Дата доставки</th>
+        <th scope="col">Адреса</th>
+      </tr>
+      </thead>
+      <tbody>
+      {% for product in orders %}
+        <tr class="table-active">
+          <th scope="row"><a>{{ product.title }}</a></th>
+          <td>{{ product.product_type }}</td>
+          <td>{{ product.delivery_date|date:"d M Y" }}</td>
+          <td>{{ product.address }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

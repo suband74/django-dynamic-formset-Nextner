@@ -1,0 +1,10 @@
+version: "3"
+services:
+  web:
+    image: nextner_image
+    container_name: Nextner
+    build: .
+    restart: always
+    
+    ports:
+      - "5000:5000"
